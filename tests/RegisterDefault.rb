@@ -9,3 +9,4 @@ require_relative '../lib/LoginPage'
 browser = Selenium::WebDriver.for :ff
 registration_page = RegistrationPage.new(browser, true)
 registration_page.default
+browser.quit

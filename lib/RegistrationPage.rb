@@ -34,10 +34,7 @@
  	span(:errorCode, :xpath => "//form[@id='registrationForm']/table/tbody/tr[9]/td[2]/span/span[2]")
 
  	def default(data = {})
- 		data = DEFAULT_DATA.merge(data)
- 		self.email = data['email']
- 		self.password = data['password']
- 		self.source = data['source']
+ 		populate_page_with DEFAULT_DATA.merge(data)
  		check_agreement
  		register
  		LoginPage.new(browser, true)
